@@ -33,7 +33,10 @@
  
 package com.bit101.components
 {
+	import flash.display.DisplayObject;
 	import flash.display.DisplayObjectContainer;
+	import flash.display.Shape;
+	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.filters.DropShadowFilter;
@@ -267,12 +270,13 @@ package com.bit101.components
 /**
  * ArcButton class. Internal class only used by WheelMenu.
  */
+import com.bit101.components.Label;
+
 import flash.display.DisplayObject;
+import flash.display.Shape;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.events.MouseEvent;
-import flash.display.Shape;
-import com.bit101.components.Label;
 
 class ArcButton extends Sprite
 {

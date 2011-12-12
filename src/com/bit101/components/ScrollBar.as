@@ -33,6 +33,7 @@ package com.bit101.components
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.events.TimerEvent;
+	import flash.geom.Rectangle;
 	import flash.utils.Timer;
 
 	[Event(name="change", type="flash.events.Event")]
@@ -363,12 +364,13 @@ package com.bit101.components
 
 
 
+import com.bit101.components.Slider;
+import com.bit101.components.Style;
+
 import flash.display.DisplayObjectContainer;
 import flash.events.Event;
 import flash.events.MouseEvent;
 import flash.geom.Rectangle;
-import com.bit101.components.Slider;
-import com.bit101.components.Style;
 
 /**
  * Helper class for the slider portion of the scroll bar.
