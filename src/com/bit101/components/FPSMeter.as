@@ -60,6 +60,10 @@
 			{
 				addEventListener(Event.ENTER_FRAME, onEnterFrame);
 			}
+			else
+			{
+				addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+			}
 			addEventListener(Event.REMOVED_FROM_STAGE, onRemovedFromStage);
 		}
 		
@@ -98,10 +102,20 @@
 		}
 		
 		/**
+		 * Starts the meter is it is added to the stage. 
+		 */		
+		protected function onAddedToStage(event:Event):void
+		{
+			removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+			addEventListener(Event.ENTER_FRAME, onEnterFrame);
+		}
+		
+		/**
 		 * Stops the meter if it is removed from stage.
 		 */
 		protected function onRemovedFromStage(event:Event):void
 		{
+			addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			stop();
 		}
 		
