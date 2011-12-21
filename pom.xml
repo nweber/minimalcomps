@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>minimalcomps</artifactId>
+  <groupId>com.bit101</groupId>
+  <version>0.1.0</version>
+
+  <packaging>jangaroo</packaging>
+
+  <name>MinimalComps</name>
+  <description>
+MinimalComps are a set of ActionScript 3.0 User Interface Components for Flash.
+They were created with ease of use, small footprint, and performance in mind. They are ideal for rapid prototyping, experiments and small tools. They are compatible with Flash on the web, AIR, and the AIR packager for iOS and Android (though size adjustments would usually have to be made for mobile platforms).
+There is very little styling or skinning possible with MinimalComps. They were not designed to be highly customizable, visually. And moving forward, this will probably continue to be very much on the back burner. Decent styling and skinning is hard. It makes the components more complex, larger in file size, has performance implications, and introduces many more avenues for bugs to creep in. Also, no matter how you implement these things, someone is not going to like the way you did it. MinimalComps have been amazingly popular despite any real skinning or styling functionality, and thus we’ll continue with this philosophy of simplicity.
+MinimalComps are open source with a liberal MIT licence. You can check out the source at github:
+https://github.com/minimalcomps
+  </description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jangaroo_version>0.9.6</jangaroo_version>
+    <jangaroo_libs_version>0.9.7-SNAPSHOT</jangaroo_libs_version>
+  </properties>
+
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+
+    <plugins>
+      <!-- Register the packaging type "jangaroo". -->
+      <plugin>
+        <groupId>net.jangaroo</groupId>
+        <artifactId>jangaroo-maven-plugin</artifactId>
+        <version>${jangaroo_version}</version>
+        <extensions>true</extensions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.1</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.4.3</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.1.2</version>
+      </plugin>
+    </plugins>
+
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-ssh</artifactId>
+        <version>1.0-beta-6</version>
+      </extension>
+    </extensions>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>net.jangaroo</groupId>
+      <artifactId>jooflash</artifactId>
+      <version>${jangaroo_libs_version}</version>
+      <type>jangaroo</type>
+    </dependency>
+  </dependencies>
+
+</project>
